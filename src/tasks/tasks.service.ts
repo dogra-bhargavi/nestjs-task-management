@@ -10,6 +10,10 @@ export class TasksService {
     getAllTasks(): Task[]{
         return this.tasks;
     }
+    getTaskById(id:string): Task{
+        // console.log("**********id service*******",id);
+        return this.tasks.find(task=>task.id===id);
+    }
 
     createTask( CreateTaskDTO :CreateTaskDTO): Task{
         const {title,description} = CreateTaskDTO;
